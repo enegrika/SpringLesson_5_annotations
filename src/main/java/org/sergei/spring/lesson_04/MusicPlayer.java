@@ -1,4 +1,4 @@
-package org.sergei.spring.lesson_03;
+package org.sergei.spring.lesson_04;
 
 import java.util.ArrayList;
 import java.util.List;

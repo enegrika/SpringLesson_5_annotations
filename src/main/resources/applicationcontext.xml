@@ -10,7 +10,7 @@
 
 <!--    объект классикал мьюзик используем для создания фабричным меотодом-->
     <bean id="classicalBean"
-          class="org.sergei.spring.lesson_03.ClassicalMusic"
+          class="org.sergei.spring.lesson_04.ClassicalMusic"
           scope="prototype"
           init-method="doInit"
           destroy-method="doDestroy"
@@ -19,7 +19,7 @@
     </bean>
 
     <bean id="jazzBean"
-          class="org.sergei.spring.lesson_03.JazzMusic"
+          class="org.sergei.spring.lesson_04.JazzMusic"
           scope="prototype"
           init-method="doInit"
           destroy-method="doDestroy"
@@ -29,7 +29,7 @@
     <context:property-placeholder location="classpath:musicplayer.properties"/>
 
     <bean id="musicPlayerBean"
-          class="org.sergei.spring.lesson_03.MusicPlayer"
+          class="org.sergei.spring.lesson_04.MusicPlayer"
           scope="singleton"
           init-method="doInit"
           destroy-method="doDestroy"

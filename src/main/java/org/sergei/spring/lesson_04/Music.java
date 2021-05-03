@@ -1,4 +1,4 @@
-package org.sergei.spring.lesson_03;
+package org.sergei.spring.lesson_04;
 
 public interface Music {
     String getSong();
