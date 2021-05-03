@@ -7,45 +7,7 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-
-<!--    объект классикал мьюзик используем для создания фабричным меотодом-->
-    <bean id="classicalBean"
-          class="org.sergei.spring.lesson_04.ClassicalMusic"
-          scope="prototype"
-          init-method="doInit"
-          destroy-method="doDestroy"
-          factory-method="getClassicalMusic"
-    >
-    </bean>
-
-    <bean id="jazzBean"
-          class="org.sergei.spring.lesson_04.JazzMusic"
-          scope="prototype"
-          init-method="doInit"
-          destroy-method="doDestroy"
-    >
-    </bean>
-
-    <context:property-placeholder location="classpath:musicplayer.properties"/>
-
-    <bean id="musicPlayerBean"
-          class="org.sergei.spring.lesson_04.MusicPlayer"
-          scope="singleton"
-          init-method="doInit"
-          destroy-method="doDestroy"
-   >
-<!--                <property name="name" value="Sony WALKMAN"/>-->
-<!--                <property name="volume" value="55"/>-->
-        <property name="name" value="${musicplayer.name}"/>
-        <property name="volume" value="${musicplayer.volume}"/>
-
-        <property name="musicList">
-            <list>
-                <ref bean="classicalBean"/>
-                <ref bean="jazzBean"/>
-            </list>
-        </property>
-    </bean>
+    <context:component-scan base-package="org.sergei.spring.lesson_04"/>
 
 
 </beans>

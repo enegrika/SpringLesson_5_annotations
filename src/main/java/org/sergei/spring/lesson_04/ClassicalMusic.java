@@ -1,5 +1,9 @@
 package org.sergei.spring.lesson_04;
 
+
+import org.springframework.stereotype.Component;
+
+//@Component
 public class ClassicalMusic implements Music {
 
     ///// ФАБРИЧНЫЙ МЕТОД - получаем объект с помощью СТАТИЧЕСКОГО МЕТОДА
