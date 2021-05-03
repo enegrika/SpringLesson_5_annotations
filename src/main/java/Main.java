@@ -1,3 +1,4 @@
+import org.sergei.spring.lesson_03.ClassicalMusic;
 import org.sergei.spring.lesson_03.MusicPlayer;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -8,6 +9,9 @@ public class Main {
         MusicPlayer mp = context.getBean("musicPlayerBean", MusicPlayer.class);
 
         mp.playMusicList();
+
+        ClassicalMusic classicalMusic = context.getBean("classicalBean", ClassicalMusic.class);
+
 
         context.close();
     }

@@ -44,17 +44,26 @@ public class MusicPlayer {
         this.volume = volume;
     }
 
-    public MusicPlayer(){}
+    public MusicPlayer() {
+    }
+
     public MusicPlayer(List<Music> musicList) {
         this.musicList = musicList;
     }
 
     public void playMusicList() {
 
-        for (Music music: musicList) {
-            System.out.println(" playing " + music.getSong());
+        for (Music music : musicList) {
+            System.out.println(this.name + " playing " + music.getSong() + " at volume " + this.getVolume());
         }
+    }
 
+    private void doInit() {
+        System.out.println("Initialized Music player bean-object " + this);
+    }
+
+    private void doDestroy() {
+        System.out.println("Destroyed Music player bean-object " + this);
     }
 
 }
