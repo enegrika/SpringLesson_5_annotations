@@ -34,8 +34,8 @@
           init-method="doInit"
           destroy-method="doDestroy"
    >
-        <!--        <property name="name" value="Sony WALKMAN"/>-->
-        <!--        <property name="volume" value="55"/>-->
+<!--                <property name="name" value="Sony WALKMAN"/>-->
+<!--                <property name="volume" value="55"/>-->
         <property name="name" value="${musicplayer.name}"/>
         <property name="volume" value="${musicplayer.volume}"/>
 
