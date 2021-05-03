@@ -1,5 +1,4 @@
-import org.sergei.spring.lesson_02.Music;
-import org.sergei.spring.lesson_02.MusicPlayer;
+import org.sergei.spring.lesson_03.MusicPlayer;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {

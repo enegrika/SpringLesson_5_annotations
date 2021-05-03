@@ -1,4 +1,4 @@
-package org.sergei.spring.lesson_02;
+package org.sergei.spring.lesson_03;
 
 public class JazzMusic implements Music {
     @Override

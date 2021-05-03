@@ -8,16 +8,16 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
     <bean id="classicalBean"
-          class="org.sergei.spring.lesson_02.ClassicalMusic">
+          class="org.sergei.spring.lesson_03.ClassicalMusic">
     </bean>
 
     <bean id="jazzBean"
-          class="org.sergei.spring.lesson_02.JazzMusic">
+          class="org.sergei.spring.lesson_03.JazzMusic">
     </bean>
 
 
     <bean id="musicPlayerBean"
-          class="org.sergei.spring.lesson_02.MusicPlayer">
+          class="org.sergei.spring.lesson_03.MusicPlayer">
       <property name="musicList">
           <list>
               <ref bean="classicalBean"/>
