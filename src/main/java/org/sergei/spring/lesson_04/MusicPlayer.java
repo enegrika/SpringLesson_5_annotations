@@ -12,14 +12,16 @@ public class MusicPlayer {
 //    @Autowired
     private Music music;
 
+    @Autowired
     private ClassicalMusic classicalMusic;
+    @Autowired
     private JazzMusic jazzMusic;
 
-    @Autowired
-    public MusicPlayer(ClassicalMusic classicalMusic, JazzMusic jazzMusic) {
-        this.classicalMusic = classicalMusic;
-        this.jazzMusic = jazzMusic;
-    }
+//    @Autowired
+//    public MusicPlayer(ClassicalMusic classicalMusic, JazzMusic jazzMusic) {
+//        this.classicalMusic = classicalMusic;
+//        this.jazzMusic = jazzMusic;
+//    }
 
     //    по умолчанию зависимость внедряется через конструктор, даже без аннотации
 
