@@ -1,50 +1,36 @@
 package org.sergei.spring.lesson_04;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Random;
 
 @Component
 public class MusicPlayer {
 
-//    @Autowired
-    private Music music;
+    private Music music1;
+    private Music music2;
 
     @Autowired
-    private ClassicalMusic classicalMusic;
-    @Autowired
-    private JazzMusic jazzMusic;
+// we use annotation QUALIFIER to inject dependency with specific classname start from LowCase Letter
+    public MusicPlayer(@Qualifier("classicalMusic") Music music1,
+                       @Qualifier("jazzMusic") Music music2) {
+        this.music1 = music1;
+        this.music2 = music2;
+    }
 
-//    @Autowired
-//    public MusicPlayer(ClassicalMusic classicalMusic, JazzMusic jazzMusic) {
-//        this.classicalMusic = classicalMusic;
-//        this.jazzMusic = jazzMusic;
-//    }
+    public void playMusic(MusicGenre musicGenre) {
+        int index;
+        if (musicGenre.equals(MusicGenre.CLASSICAL)) {
+            index = new Random().nextInt(music1.getSongList().size());
+            System.out.println("Playing : " + music1.getSongList().get(index));
 
-    //    по умолчанию зависимость внедряется через конструктор, даже без аннотации
+        } else if (musicGenre.equals(MusicGenre.JAZZ)) {
+            index = new Random().nextInt(music2.getSongList().size());
+            System.out.println("Playing : " + music2.getSongList().get(index));
 
-//    @Autowired
-//    public MusicPlayer(Music music) {
-//        this.music = music;
-//    }
-
-
-    //спрингу не важно наименование метода он все равно будет внедрять зависимость
-    // исходя из передаваемого параметра
-
-//    @Autowired
-//    public void setMusicasfasfasf(Music music) {
-//        this.music = music;
-//    }
-
-    public String playMusic() {
-//        System.out.println("Playing : " + music.getSong());
-//        System.out.println("Playing : " + classicalMusic.getSong());
-//        System.out.println("Playing : " + jazzMusic.getSong());
-        return "Playing : " + classicalMusic.getSong();
-
+        }
     }
 
 }

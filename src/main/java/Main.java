@@ -1,7 +1,4 @@
-import org.sergei.spring.lesson_04.ClassicalMusic;
-import org.sergei.spring.lesson_04.Computer;
-import org.sergei.spring.lesson_04.Music;
-import org.sergei.spring.lesson_04.MusicPlayer;
+import org.sergei.spring.lesson_04.*;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
@@ -12,13 +9,10 @@ public class Main {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationcontext.xml");
 
-//        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-//
-//        musicPlayer.playMusic();
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 
-        Computer computer = context.getBean("computer",Computer.class);
-
-        System.out.println(computer);
+        musicPlayer.playMusic(MusicGenre.CLASSICAL);
+        musicPlayer.playMusic(MusicGenre.JAZZ);
 
         context.close();
     }
